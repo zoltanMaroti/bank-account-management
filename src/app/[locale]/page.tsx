@@ -1,19 +1,12 @@
-"use client";
+import { fetchBankAccounts } from "@/app/components/BankAccounts/services";
+import BankAccounts from "@/app/components/BankAccounts/BankAccounts";
 
-import { useTranslations } from "next-intl";
-import { RootState } from "@/lib/store/store";
-import { useSelector } from "react-redux";
-
-export default function HomePage() {
-    const t = useTranslations("HomePage");
-    const isMenuOpen = useSelector(
-        (state: RootState) => state.appState.isMenuOpen
-    );
+export default async function HomePage() {
+    const [accounts] = await Promise.all([fetchBankAccounts()]);
 
     return (
-        <div>
-            <h1>{t("title")}</h1>
-            <p>Is menu open?: {isMenuOpen}</p>
+        <div className='flex flex-col gap-3'>
+            <BankAccounts initialAccounts={accounts} />
         </div>
     );
 }
