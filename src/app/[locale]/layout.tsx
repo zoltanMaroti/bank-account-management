@@ -2,6 +2,18 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import StoreProvider from "@/app/providers/StoreProvider";
+import { Metadata } from "next";
+import { Geist } from "next/font/google";
+import "@/app/globals.css";
+
+const geist = Geist({
+    subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+    title: "Bank Accounts Management",
+    description: "Overseeing financial accounts and transactions.",
+};
 
 export default async function LocaleLayout({
     children,
@@ -17,7 +29,7 @@ export default async function LocaleLayout({
 
     return (
         <html lang={locale}>
-            <body>
+            <body className={geist.className}>
                 <NextIntlClientProvider>
                     <StoreProvider>{children}</StoreProvider>
                 </NextIntlClientProvider>
