@@ -4,6 +4,7 @@ import MenuIcon from "@/assets/icons/menu.svg";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "@/lib/store/slices/AppStateSlice";
 import Link from "next/link";
+import LocaleSelector from "@/app/components/LocaleSelector/LocaleSelector";
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -21,11 +22,11 @@ const Header = () => {
                     >
                         <MenuIcon className='w-6 h-6 text-white' />
                     </button>
-
                     <Link href='/'>
                         <p className='text-xl font-semibold text-white'>Bank</p>
                     </Link>
                 </div>
+                <LocaleSelector />
             </div>
         </header>
     );
