@@ -1,0 +1,38 @@
+"use client";
+
+import menuIcon from "@/assets/icons/menu.svg";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "@/lib/store/slices/AppStateSlice";
+import Link from "next/link";
+
+const Header = () => {
+    const dispatch = useDispatch();
+
+    const onClick = () => dispatch(toggleMenu());
+
+    return (
+        <header className='fixed top-0 w-full bg-gradient-to-r from-blue-900 to-blue-950 px-3 py-3 z-10'>
+            <div className='flex items-center justify-between'>
+                <div className='flex items-center'>
+                    <button
+                        type='button'
+                        onClick={onClick}
+                        className='p-2 text-sm text-gray-500 rounded-lg focus:outline-none cursor-pointer'
+                    >
+                        <img
+                            src={menuIcon.src}
+                            alt='Menu'
+                            className='w-6 h-6'
+                        />
+                    </button>
+
+                    <Link href='/'>
+                        <p className='text-xl font-semibold text-white'>Bank</p>
+                    </Link>
+                </div>
+            </div>
+        </header>
+    );
+};
+
+export default Header;

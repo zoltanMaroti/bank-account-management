@@ -1,7 +1,6 @@
 "use client";
 
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
 
 export type AppState = {
     isMenuOpen: boolean;
@@ -15,11 +14,14 @@ export const AppStateSlice = createSlice({
     name: "appState",
     initialState,
     reducers: {
-        openMenu: (state, action: PayloadAction<boolean | undefined>) => {
+        openMenu: (state) => {
             state.isMenuOpen = true;
         },
-        closeMenu: (state, action: PayloadAction<boolean | undefined>) => {
+        closeMenu: (state) => {
             state.isMenuOpen = false;
+        },
+        toggleMenu: (state) => {
+            state.isMenuOpen = !state.isMenuOpen;
         },
         resetState: (state) => {
             state.isMenuOpen = false;
@@ -27,5 +29,6 @@ export const AppStateSlice = createSlice({
     },
 });
 
-export const { openMenu, closeMenu, resetState } = AppStateSlice.actions;
+export const { openMenu, closeMenu, toggleMenu, resetState } =
+    AppStateSlice.actions;
 export default AppStateSlice.reducer;

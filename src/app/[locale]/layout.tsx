@@ -4,6 +4,7 @@ import { routing } from "@/i18n/routing";
 import StoreProvider from "@/app/providers/StoreProvider";
 import { Metadata } from "next";
 import { Geist } from "next/font/google";
+import AppLayout from "@/app/components/Layout/AppLayout";
 import "@/app/globals.css";
 
 const geist = Geist({
@@ -31,7 +32,9 @@ export default async function LocaleLayout({
         <html lang={locale}>
             <body className={geist.className}>
                 <NextIntlClientProvider>
-                    <StoreProvider>{children}</StoreProvider>
+                    <StoreProvider>
+                        <AppLayout>{children}</AppLayout>
+                    </StoreProvider>
                 </NextIntlClientProvider>
             </body>
         </html>
