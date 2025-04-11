@@ -3,20 +3,16 @@ import { BankAccountCardProps } from "@/app/components/BankAccountCard/types";
 import Button from "@/app/components/Button/Button";
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
-import savingsIcon from "@/assets/icons/savings.svg";
-import currencyIcon from "@/assets/icons/currency.svg";
-import salaryIcon from "@/assets/icons/salary.svg";
+import SavingsIcon from "@/assets/icons/savings.svg";
+import CurrencyIcon from "@/assets/icons/currency.svg";
+import SalaryIcon from "@/assets/icons/salary.svg";
 import { formatCurrency } from "@/app/components/BankAccountCard/utils";
 import { useTranslations } from "next-intl";
 
 const bankAccountIcons = {
-    savings: (
-        <img src={savingsIcon.src} alt='Savings icon' className='w-6 h-6' />
-    ),
-    currency: (
-        <img src={currencyIcon.src} alt='Currency icon' className='w-6 h-6' />
-    ),
-    salary: <img src={salaryIcon.src} alt='Salary icon' className='w-6 h-6' />,
+    savings: <SavingsIcon className='w-6 h-6' />,
+    currency: <CurrencyIcon className='w-6 h-6' />,
+    salary: <SalaryIcon className='w-6 h-6' />,
 };
 
 const BankAccountCard = ({

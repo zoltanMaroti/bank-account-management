@@ -1,7 +1,7 @@
 import NavLink from "@/app/components/NavLink/NavLink";
-import dashboardIcon from "@/assets/icons/dashboard.svg";
-import signOutIcon from "@/assets/icons/signOut.svg";
-import transferIcon from "@/assets/icons/transfer.svg";
+import DashboardIcon from "@/assets/icons/dashboard.svg";
+import SignOutIcon from "@/assets/icons/signOut.svg";
+import TransferIcon from "@/assets/icons/transfer.svg";
 import Link from "next/link";
 
 const DesktopMenu = () => {
@@ -12,27 +12,15 @@ const DesktopMenu = () => {
             </Link>
             <nav className='flex flex-col gap-1 space-y-2'>
                 <NavLink href='/'>
-                    <img
-                        src={dashboardIcon.src}
-                        alt='Dashboard'
-                        className='w-5 h-5 text-gray-50'
-                    />
+                    <DashboardIcon className='w-5 h-5 text-gray-50' />
                     <span className='ms-3'>Dashboard</span>
                 </NavLink>
                 <NavLink href='/transfer'>
-                    <img
-                        src={transferIcon.src}
-                        alt='Transfer'
-                        className='w-5 h-5 text-gray-50'
-                    />
+                    <TransferIcon className='w-5 h-5 text-gray-50' />
                     <span className='ms-3'>Transfer</span>
                 </NavLink>
                 <NavLink href='#'>
-                    <img
-                        src={signOutIcon.src}
-                        alt='Sign out'
-                        className='w-5 h-5 text-gray-50'
-                    />
+                    <SignOutIcon className='w-5 h-5 text-gray-50' />
                     <span className='ms-3'>Sign Out</span>
                 </NavLink>
             </nav>

@@ -17,7 +17,7 @@ const Pagination = ({
                     key={index}
                     onClick={() => onClick(index)}
                     className={twMerge(
-                        "h-2 w-2 rounded-full mx-1",
+                        "h-2 w-2 rounded-full mx-1 cursor-pointer",
                         scrollPosition === index ? "bg-gray-800" : "bg-gray-400"
                     )}
                 />

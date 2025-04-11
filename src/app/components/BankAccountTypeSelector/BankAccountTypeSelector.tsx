@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import savingsIcon from "@/assets/icons/savings.svg";
-import currencyIcon from "@/assets/icons/currency.svg";
-import salaryIcon from "@/assets/icons/salary.svg";
+import SavingsIcon from "@/assets/icons/savings.svg";
+import CurrencyIcon from "@/assets/icons/currency.svg";
+import SalaryIcon from "@/assets/icons/salary.svg";
 import { twMerge } from "tailwind-merge";
 import { UseFormRegister } from "react-hook-form";
 import { BankAccountFormValues } from "@/app/components/BankAccountForm/types";
@@ -71,11 +71,7 @@ const BankAccountTypeSelector = ({
                         checked={accountType === "savings"}
                         onChange={() => onSelectAccountType("savings")}
                     />
-                    <img
-                        src={savingsIcon.src}
-                        alt='Savings icon'
-                        className='w-4 h-4 me-2'
-                    />
+                    <SavingsIcon className='w-4 h-4 me-2' />
                     {tAccountType("savings")}
                 </label>
                 <label
@@ -96,11 +92,7 @@ const BankAccountTypeSelector = ({
                         checked={accountType === "currency"}
                         onChange={() => onSelectAccountType("currency")}
                     />
-                    <img
-                        src={currencyIcon.src}
-                        alt='Savings icon'
-                        className='w-4 h-4 me-2'
-                    />
+                    <CurrencyIcon className='w-4 h-4 me-2' />
                     {tAccountType("currency")}
                 </label>
                 <label
@@ -121,11 +113,7 @@ const BankAccountTypeSelector = ({
                         checked={accountType === "salary"}
                         onChange={() => onSelectAccountType("salary")}
                     />
-                    <img
-                        src={salaryIcon.src}
-                        alt='Savings icon'
-                        className='w-4 h-4 me-2'
-                    />
+                    <SalaryIcon className='w-4 h-4 me-2' />
                     {tAccountType("salary")}
                 </label>
             </div>
