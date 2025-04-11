@@ -1,4 +1,5 @@
 import { Currency } from "@/app/components/BankAccountCard/types";
+import { v4 as uuidv4 } from "uuid";
 
 export const formatCurrency = (
     currency: Currency,
@@ -12,3 +13,5 @@ export const formatCurrency = (
         ...options,
     }).format(amount);
 };
+
+export const generateBankAccountId = () => uuidv4();
