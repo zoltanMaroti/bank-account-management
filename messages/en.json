@@ -32,5 +32,22 @@
         "dashboard": "Dashboard",
         "transfer": "Transfer",
         "signOut": "Sign out"
+    },
+    "DeleteBankAccount": {
+        "confirmation": {
+            "title": "Are you sure?",
+            "subtitle": "Do you really want to delete this account?"
+        },
+        "deleteButton": {
+            "pending": "Deleting...",
+            "submit": "Delete"
+        },
+        "cancelButton": {
+            "label": "Cancel"
+        },
+        "tooltip": {
+            "label": "Delete account",
+            "disabled": "You can't delete your account with a balance"
+        }
     }
 }

@@ -32,5 +32,22 @@
         "dashboard": "Kezdőlap",
         "transfer": "Átutalás",
         "signOut": "Kijelentkezés"
+    },
+    "DeleteBankAccount": {
+        "confirmation": {
+            "title": "Biztosan?",
+            "subtitle": "Biztosan törlöd ezt a bankszámlát?"
+        },
+        "deleteButton": {
+            "pending": "Törlés...",
+            "submit": "Törlés"
+        },
+        "cancelButton": {
+            "label": "Mégsem"
+        },
+        "tooltip": {
+            "label": "Bankszámla törlése",
+            "disabled": "A bankszámla törlése nem lehetséges"
+        }
     }
 }

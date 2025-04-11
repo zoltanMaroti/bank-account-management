@@ -22,6 +22,8 @@ import Title from "@/app/components/Title/Title";
 import Button from "@/app/components/Button/Button";
 import CurrencySelector from "@/app/components/BankAccountForm/CurrencySelector";
 import { useTranslations } from "next-intl";
+import DeleteBankAccountButton from "@/app/components/DeleteBankAccountButton/DeleteBankAccountButton";
+import { hasBalance } from "@/app/components/DeleteBankAccountButton/utils";
 
 const BankAccountForm = ({
     title,
@@ -103,6 +105,15 @@ const BankAccountForm = ({
                 onSubmit={handleSubmit(onSubmit)}
             >
                 <Title title={title} />
+                <hr className='border border-gray-100 mb-2' />
+                {bankAccount && (
+                    <div className='absolute top-4 right-4'>
+                        <DeleteBankAccountButton
+                            bankAccount={bankAccount}
+                            isDisabled={hasBalance(bankAccount?.balance)}
+                        />
+                    </div>
+                )}
                 <BankAccountTypeSelector
                     onChange={onChangeAccountType}
                     hasError={!!errors?.accountType}

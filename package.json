@@ -18,6 +18,7 @@
         "react-hook-form": "^7.55.0",
         "react-redux": "^9.2.0",
         "react-select": "^5.10.1",
+        "react-tooltip": "^5.28.1",
         "uuid": "^11.1.0"
     },
     "devDependencies": {

@@ -12,7 +12,7 @@ const Header = () => {
     const onClick = () => dispatch(toggleMenu());
 
     return (
-        <header className='fixed top-0 w-full bg-gradient-to-r from-blue-900 to-blue-950 px-3 py-3 z-10'>
+        <header className='fixed top-0 w-full bg-gradient-to-r from-blue-900 to-blue-950 px-3 py-1 z-10'>
             <div className='flex items-center justify-between'>
                 <div className='flex items-center'>
                     <button
