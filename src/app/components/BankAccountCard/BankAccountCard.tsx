@@ -24,6 +24,7 @@ const BankAccountCard = ({
     className,
 }: BankAccountCardProps) => {
     const tAccountType = useTranslations("BankAccountType");
+    const tEditAccount = useTranslations("EditBankAccount");
 
     return (
         <Link
@@ -39,7 +40,7 @@ const BankAccountCard = ({
         >
             <div className='opacity-0 hover:opacity-100 duration-300 backdrop-blur-sm absolute inset-0 z-10 flex justify-center items-center'>
                 <Button type='button' className='focus:ring-0'>
-                    Edit
+                    {tEditAccount("editButton.submit")}
                 </Button>
             </div>
             <div>

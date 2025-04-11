@@ -53,5 +53,10 @@
     "CreateBankAccount": {
         "title": "Open account",
         "subtitle": "Savings, currency, salary"
+    },
+    "EditBankAccount": {
+        "editButton": {
+            "submit": "Edit"
+        }
     }
 }

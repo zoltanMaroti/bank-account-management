@@ -53,5 +53,10 @@
     "CreateBankAccount": {
         "title": "Bankszámla nyitás",
         "subtitle": "Spórolás, deviza, fizetés"
+    },
+    "EditBankAccount": {
+        "editButton": {
+            "submit": "Szerkesztés"
+        }
     }
 }
