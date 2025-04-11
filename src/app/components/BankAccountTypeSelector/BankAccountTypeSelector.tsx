@@ -9,6 +9,7 @@ import { UseFormRegister } from "react-hook-form";
 import { BankAccountFormValues } from "@/app/components/BankAccountForm/types";
 import { AccountType } from "@/app/components/BankAccountCard/types";
 import { DEFAULT_BANK_ACCOUNT_TYPE } from "@/app/components/BankAccountForm/constants";
+import { useTranslations } from "next-intl";
 
 const BankAccountTypeSelector = ({
     onChange,
@@ -22,6 +23,8 @@ const BankAccountTypeSelector = ({
     defaultValue?: string;
 }) => {
     const [accountType, setAccountType] = useState("");
+    const tAccountType = useTranslations("BankAccountType");
+    const tSchema = useTranslations("Schema");
 
     const onSelectAccountType = (value: string) => {
         setAccountType(value);
@@ -47,7 +50,7 @@ const BankAccountTypeSelector = ({
                     hasError && "text-red-700"
                 )}
             >
-                Choose account type
+                {tAccountType("label")}
             </label>
             <div className='text-sm font-medium text-center text-gray-500 rounded-lg inline-flex shadow-sm w-full'>
                 <label
@@ -73,7 +76,7 @@ const BankAccountTypeSelector = ({
                         alt='Savings icon'
                         className='w-4 h-4 me-2'
                     />
-                    Savings
+                    {tAccountType("savings")}
                 </label>
                 <label
                     htmlFor='currency'
@@ -98,7 +101,7 @@ const BankAccountTypeSelector = ({
                         alt='Savings icon'
                         className='w-4 h-4 me-2'
                     />
-                    Currency
+                    {tAccountType("currency")}
                 </label>
                 <label
                     htmlFor='salary'
@@ -123,12 +126,12 @@ const BankAccountTypeSelector = ({
                         alt='Savings icon'
                         className='w-4 h-4 me-2'
                     />
-                    Salary
+                    {tAccountType("salary")}
                 </label>
             </div>
             {hasError ? (
                 <label className='block mt-2 text-sm text-red-700'>
-                    This field is required
+                    {tSchema("required")}
                 </label>
             ) : null}
         </div>

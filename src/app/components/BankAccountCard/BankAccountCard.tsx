@@ -7,6 +7,7 @@ import savingsIcon from "@/assets/icons/savings.svg";
 import currencyIcon from "@/assets/icons/currency.svg";
 import salaryIcon from "@/assets/icons/salary.svg";
 import { formatCurrency } from "@/app/components/BankAccountCard/utils";
+import { useTranslations } from "next-intl";
 
 const bankAccountIcons = {
     savings: (
@@ -26,6 +27,8 @@ const BankAccountCard = ({
     description,
     className,
 }: BankAccountCardProps) => {
+    const tAccountType = useTranslations("BankAccountType");
+
     return (
         <Link
             href={`/account/${id}`}
@@ -44,7 +47,7 @@ const BankAccountCard = ({
                 </Button>
             </div>
             <div>
-                <p className='capitalize'>{accountType}</p>
+                <p className='capitalize'>{tAccountType(accountType || "")}</p>
                 <p className='text-sm font-light'>{description}</p>
             </div>
 

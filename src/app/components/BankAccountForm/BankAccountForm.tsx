@@ -21,6 +21,7 @@ import { DEFAULT_BANK_ACCOUNT_TYPE } from "@/app/components/BankAccountForm/cons
 import Title from "@/app/components/Title/Title";
 import Button from "@/app/components/Button/Button";
 import CurrencySelector from "@/app/components/BankAccountForm/CurrencySelector";
+import { useTranslations } from "next-intl";
 
 const BankAccountForm = ({
     title,
@@ -42,6 +43,13 @@ const BankAccountForm = ({
     const [accountType, setAccountType] = useState<AccountType>(
         bankAccount?.accountType || DEFAULT_BANK_ACCOUNT_TYPE
     );
+
+    const tBankAccountForm = useTranslations("BankAccountForm");
+    const tSchema = useTranslations("Schema");
+
+    const buttonText = isPending
+        ? tBankAccountForm("submitButton.pending")
+        : tBankAccountForm("submitButton.submit");
 
     const {
         register,
@@ -109,13 +117,13 @@ const BankAccountForm = ({
                 />
                 <Input
                     {...register("description", {
-                        required: "This field is required",
+                        required: tSchema("required"),
                     })}
                     type='text'
                     id='description'
                     data-testid='account-description'
-                    placeholder='Add description'
-                    label='Account description'
+                    placeholder={tBankAccountForm("description.placeholder")}
+                    label={tBankAccountForm("description.label")}
                     hasError={!!errors?.description}
                     errorMessage={errors?.description?.message}
                     onChange={onChangeDescription}
@@ -127,7 +135,7 @@ const BankAccountForm = ({
                     type='submit'
                     disabled={isPending}
                 >
-                    {isPending ? "Saving account..." : "Save account"}
+                    {buttonText}
                 </Button>
             </form>
         </>

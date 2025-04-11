@@ -1,6 +1,31 @@
 {
-    "HomePage": {
-        "title": "Hello világ!",
-        "about": "Rólunk"
+    "NewBankAccountPage": {
+        "title": "Új bankszámla"
+    },
+    "EditBankAccountPage": {
+        "title": "Bankszámla szerkesztése"
+    },
+    "BankAccountForm": {
+        "description": {
+            "placeholder": "Leírás hozzáadása",
+            "label": "Bankszámla leírása"
+        },
+        "submitButton": {
+            "pending": "Mentés...",
+            "submit": "Bankszámla mentése"
+        }
+    },
+    "BankAccountType": {
+        "label": "Válassz bankszámla típust",
+        "savings": "Spórolás",
+        "currency": "Valuta",
+        "salary": "Fizetés"
+    },
+    "Schema": {
+        "required": "Kötelező mező"
+    },
+    "CurrencySelector": {
+        "label": "Válassz valutát",
+        "placeholder": "Kérlek válassz valutát"
     }
 }

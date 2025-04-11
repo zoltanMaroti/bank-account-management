@@ -7,6 +7,7 @@ import Label from "@/app/components/Label/Label";
 import ErrorMessage from "@/app/components/ErrorMessage/ErrorMessage";
 import { CURRENCIES } from "@/app/components/BankAccountForm/constants";
 import { CurrencyOption } from "@/app/components/BankAccountForm/types";
+import { useTranslations } from "next-intl";
 
 const CurrencySelector = ({
     control,
@@ -19,6 +20,9 @@ const CurrencySelector = ({
     hasError: boolean;
     onChange: (option: SingleValue<CurrencyOption>) => void;
 }) => {
+    const tSchema = useTranslations("Schema");
+    const tCurrencySelector = useTranslations("CurrencySelector");
+
     const currencyOptions = useMemo(
         () =>
             CURRENCIES.map((currency) => ({
@@ -32,17 +36,17 @@ const CurrencySelector = ({
         <div>
             <Label
                 htmlFor='currency'
-                label={"Choose currency"}
+                label={tCurrencySelector("label")}
                 hasError={hasError}
             />
             <Controller
                 name='currency'
                 control={control}
-                rules={{ required: "This field is required" }}
+                rules={{ required: tSchema("required") }}
                 render={({ field }) => (
                     <Select
                         {...field}
-                        placeholder='Please choose an option'
+                        placeholder={tCurrencySelector("placeholder")}
                         isSearchable={false}
                         options={currencyOptions}
                         defaultValue={currencyOptions.find(
@@ -72,7 +76,7 @@ const CurrencySelector = ({
             <ErrorMessage
                 htmlFor='currency'
                 hasError={hasError}
-                message={"This field is required"}
+                message={tSchema("required")}
             />
         </div>
     );
