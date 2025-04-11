@@ -6,6 +6,7 @@ import { twMerge } from "tailwind-merge";
 import SavingsIcon from "@/assets/icons/savings.svg";
 import CurrencyIcon from "@/assets/icons/currency.svg";
 import SalaryIcon from "@/assets/icons/salary.svg";
+import { formatCurrency } from "@/app/components/BankAccountCard/utils";
 
 const bankAccountIcons = {
     savings: <SavingsIcon className='w-6 h-6' />,
@@ -43,7 +44,9 @@ const BankAccountCard = ({
                 <p className='text-sm font-light'>{description}</p>
             </div>
 
-            <p className='text-xl font-semibold'>{currency}</p>
+            <p className='text-xl font-semibold'>
+                {currency ? formatCurrency(currency, balance || 0) : null}
+            </p>
             <span className='absolute bottom-4 right-4'>
                 {accountType && bankAccountIcons[accountType]}
             </span>
