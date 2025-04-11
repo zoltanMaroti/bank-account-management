@@ -40,9 +40,11 @@ const LocaleSelector = () => {
             onChange={onChange}
             classNames={{
                 control: () =>
-                    "!bg-transparent !rounded-lg !p-1 !ring-0 !outline-none !border-none",
+                    "!bg-transparent !rounded-lg !p-1 !ring-0 !outline-none !border-none !cursor-pointer",
                 option: (state) =>
-                    state.isSelected ? "!bg-blue-700" : "bg-white",
+                    state.isSelected
+                        ? "!bg-blue-700 !cursor-pointer"
+                        : "bg-white !cursor-pointer",
                 menu: () => "bg-gray-50 !z-20",
                 placeholder: () => "!text-white !text-sm",
                 singleValue: () => "!text-white",

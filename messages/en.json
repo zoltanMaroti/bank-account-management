@@ -27,5 +27,10 @@
     "CurrencySelector": {
         "label": "Choose currency",
         "placeholder": "Please choose an option"
+    },
+    "Menu": {
+        "dashboard": "Dashboard",
+        "transfer": "Transfer",
+        "signOut": "Sign out"
     }
 }

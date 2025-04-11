@@ -30,7 +30,7 @@ const BankAccountCard = ({
             href={`/account/${id}`}
             data-testid='account-card'
             className={twMerge(
-                "flex flex-col justify-between relative bg-white h-40 min-w-64 p-3 rounded-md bg-cover text-white overflow-hidden",
+                "flex flex-col justify-between relative bg-white h-40 min-w-64 p-3 rounded-md bg-cover text-white overflow-hidden z-1",
                 className
             )}
             style={{
