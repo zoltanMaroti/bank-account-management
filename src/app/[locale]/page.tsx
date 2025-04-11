@@ -1,12 +1,19 @@
+"use client";
+
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { RootState } from "@/lib/store/store";
+import { useSelector } from "react-redux";
 
 export default function HomePage() {
     const t = useTranslations("HomePage");
+    const isMenuOpen = useSelector(
+        (state: RootState) => state.appState.isMenuOpen
+    );
+
     return (
         <div>
             <h1>{t("title")}</h1>
-            <Link href='/about'>{t("about")}</Link>
+            <p>Is menu open?: {isMenuOpen}</p>
         </div>
     );
 }
