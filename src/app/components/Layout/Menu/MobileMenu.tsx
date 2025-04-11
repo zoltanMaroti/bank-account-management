@@ -17,7 +17,7 @@ const MobileMenu = () => {
     return (
         <aside
             className={twMerge(
-                "fixed right-full top-16 w-80 transition-transform bg-blue-950 h-full p-3 z-20",
+                "fixed right-full top-13 w-80 transition-transform bg-blue-950 h-full p-3 z-20",
                 isMenuOpen ? "translate-x-full" : "-translate-x-full"
             )}
         >
