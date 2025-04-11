@@ -18,7 +18,7 @@
     "BankAccountType": {
         "label": "Válassz bankszámla típust",
         "savings": "Spórolás",
-        "currency": "Valuta",
+        "currency": "Deviza",
         "salary": "Fizetés"
     },
     "Schema": {
@@ -49,5 +49,9 @@
             "label": "Bankszámla törlése",
             "disabled": "A bankszámla törlése nem lehetséges"
         }
+    },
+    "CreateBankAccount": {
+        "title": "Bankszámla nyitás",
+        "subtitle": "Spórolás, deviza, fizetés"
     }
 }

@@ -49,5 +49,9 @@
             "label": "Delete account",
             "disabled": "You can't delete your account with a balance"
         }
+    },
+    "CreateBankAccount": {
+        "title": "Open account",
+        "subtitle": "Savings, currency, salary"
     }
 }

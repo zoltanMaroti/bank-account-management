@@ -4,6 +4,7 @@ import React from "react";
 import BankAccountCard from "@/app/components/BankAccountCard/BankAccountCard";
 import { BankAccount } from "@/app/components/BankAccountCard/types";
 import HorizontalScroll from "@/app/components/HorizontalScroll/HorizontalScroll";
+import CreateBankAccountButton from "@/app/components/CreateBankAccountButton/CreateBankAccountButton";
 
 const BankAccounts = ({
     initialAccounts,
@@ -12,7 +13,10 @@ const BankAccounts = ({
 }) => {
     return (
         <section className='flex flex-col gap-4 m-2 min-h-64'>
-            <div className='flex gap-2 w-full'>
+            <div className='flex gap-2 w-full flex-col md:flex-row'>
+                <div className='flex-shrink-0'>
+                    <CreateBankAccountButton />
+                </div>
                 <div className='flex-grow overflow-hidden'>
                     <HorizontalScroll>
                         {initialAccounts.map(
