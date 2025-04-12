@@ -7,7 +7,7 @@ import React, {
     ChangeEventHandler,
 } from "react";
 import MoneyIcon from "@/assets/icons/money.svg";
-import CurrencySelector from "@/features/currencies/components/CurrencySelector";
+import CurrencySelector from "@/features/transfer/components/TransferCurrencySelector";
 import { BankAccount } from "@/features/bank-accounts/types";
 import { TransferFundsFormValues } from "@/features/transfer/types";
 import { CurrencyConversion } from "@/features/currencies/types";
