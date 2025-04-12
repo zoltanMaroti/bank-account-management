@@ -1,7 +1,7 @@
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import StoreProvider from "@/features/bank-accounts/providers/StoreProvider";
+import StoreProvider from "@/lib/store/providers/StoreProvider";
 import { Metadata } from "next";
 import { Geist } from "next/font/google";
 import AppLayout from "@/features/ui/components/AppLayout";
