@@ -69,5 +69,28 @@
             "title": "Nincs találat erre {searchTerm}",
             "subtitle": "Kérlek próbáld újra"
         }
+    },
+    "TransferFundsPage": {
+        "title": "Átutalás",
+        "subtitle": "Utalj át bankszámlára",
+        "sourceAccount": "Bankszámla",
+        "targetAccount": "Célszámla",
+        "targetAmount": {
+            "placeholder": "Összeg",
+            "label": "Összeg"
+        },
+        "submitButton": {
+            "pending": "Átutalás...",
+            "label": "Átutalás"
+        },
+        "back": "Vissza",
+        "continue": "Tovább"
+    },
+    "Stepper": {
+        "details": "Részletek",
+        "review": "Áttekintés"
+    },
+    "SelectBankAccount": {
+        "placeholder": "Kérlek válassz bankszámlát"
     }
 }

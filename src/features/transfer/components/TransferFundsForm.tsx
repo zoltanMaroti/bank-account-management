@@ -31,6 +31,7 @@ import ReviewTransfer from "@/features/transfer/components/ReviewTransfer";
 import { MINIMUM_TRANSFER_AMOUNT } from "@/features/transfer/constants";
 import { validateTargetAmount } from "@/features/transfer/utils";
 import { createTransaction } from "@/features/transfer/actions";
+import { useTranslations } from "next-intl";
 
 const TransferFundsForm = ({
     accounts,
@@ -39,6 +40,8 @@ const TransferFundsForm = ({
     accounts: BankAccount[];
     currencyConversion: CurrencyConversion;
 }) => {
+    const tTransfer = useTranslations("TransferFundsPage");
+
     const {
         register,
         control,
@@ -109,12 +112,18 @@ const TransferFundsForm = ({
     const showReviewTransfer =
         isLastStep && sourceAccount && targetAccount && targetAmount;
 
+    const buttonText = isLastStep
+        ? isPending
+            ? tTransfer("submitButton.pending")
+            : tTransfer("submitButton.label")
+        : tTransfer("continue");
+
     return (
         <section className='relative bg-white rounded-md p-4 mt-6 w-full flex flex-col gap-3'>
             <Stepper steps={steps} currentStep={currentStep} />
             <Title
-                title='Transfer funds'
-                subTitle='Deposit funds into an account'
+                title={tTransfer("title")}
+                subTitle={tTransfer("subtitle")}
             />
             <form
                 onSubmit={handleSubmit(onSubmit)}
@@ -123,7 +132,7 @@ const TransferFundsForm = ({
                 {isFirstStep && (
                     <>
                         <BankAccountSelector
-                            label='Transfer from'
+                            label={tTransfer("sourceAccount")}
                             name='sourceAccount'
                             control={control}
                             accounts={accounts}
@@ -136,7 +145,7 @@ const TransferFundsForm = ({
                         {sourceAccount && (
                             <BankAccountSelector
                                 id={sourceAccount.id}
-                                label='Transfer to'
+                                label={tTransfer("targetAccount")}
                                 name='targetAccount'
                                 control={control}
                                 accounts={eligibleTargetAccounts}
@@ -151,7 +160,7 @@ const TransferFundsForm = ({
                             <div>
                                 <Label
                                     htmlFor='targetAmount'
-                                    label='Enter amount'
+                                    label={tTransfer("targetAmount.label")}
                                     hasError={!!errors?.targetAmount}
                                 />
                                 <div className='w-full mx-auto flex'>
@@ -169,7 +178,9 @@ const TransferFundsForm = ({
                                                 errors?.targetAmount &&
                                                     "border-red-700 border-r-1 focus:ring-red-700 focus:border-red-700 outline-none"
                                             )}
-                                            placeholder='Enter amount'
+                                            placeholder={tTransfer(
+                                                "targetAmount.placeholder"
+                                            )}
                                             {...register(
                                                 "targetAmount",
                                                 validateTargetAmount(
@@ -219,21 +230,18 @@ const TransferFundsForm = ({
                     onClick={nextStep}
                     disabled={isPending}
                 >
-                    {isLastStep
-                        ? isPending
-                            ? "Transferring..."
-                            : "Transfer"
-                        : "Continue"}
+                    {buttonText}
                 </Button>
 
                 {!isFirstStep && (
                     <button
                         data-testid='back-button'
                         type='button'
+                        className='cursor-pointer'
                         onClick={previousStep}
                         disabled={isPending}
                     >
-                        Back
+                        {tTransfer("back")}
                     </button>
                 )}
             </form>

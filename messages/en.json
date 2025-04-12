@@ -69,5 +69,28 @@
             "title": "No results found for {searchTerm}",
             "subtitle": "Please try again with another keyword"
         }
+    },
+    "TransferFundsPage": {
+        "title": "Transfer funds",
+        "subtitle": "Deposit funds into an account",
+        "sourceAccount": "Transfer from",
+        "targetAccount": "Transfer to",
+        "targetAmount": {
+            "placeholder": "Enter amount",
+            "label": "Enter amount"
+        },
+        "submitButton": {
+            "pending": "Transferring...",
+            "label": "Transfer"
+        },
+        "back": "Back",
+        "continue": "Continue"
+    },
+    "Stepper": {
+        "details": "Details",
+        "review": "Review"
+    },
+    "SelectBankAccount": {
+        "placeholder": "Please choose an account"
     }
 }

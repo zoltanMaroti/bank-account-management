@@ -5,6 +5,7 @@ import { BankAccount } from "@/features/bank-accounts/types";
 import { Currency } from "@/features/currencies/types";
 import { formatCurrency } from "@/features/bank-accounts/utils";
 import Label from "@/features/ui/components/Label";
+import { useTranslations } from "next-intl";
 
 const ReviewTransfer = ({
     sourceAccount,
@@ -17,6 +18,8 @@ const ReviewTransfer = ({
     targetAmount: number;
     targetCurrency: Currency;
 }) => {
+    const t = useTranslations("TransferFundsPage");
+
     return (
         <div className='flex flex-col gap-3'>
             <div className='flex gap-2 relative'>
@@ -41,7 +44,7 @@ const ReviewTransfer = ({
                 <div className='flex flex-col gap-3 bg-gray-100 p-3 rounded-md'>
                     <div>
                         <Label
-                            label='Transfer from'
+                            label={t("sourceAccount")}
                             className='text-gray-600 mb-0'
                         />
                         <p className='text-gray-800'>
@@ -53,7 +56,7 @@ const ReviewTransfer = ({
                     </div>
                     <div>
                         <Label
-                            label='Transfer to'
+                            label={t("targetAccount")}
                             className='text-gray-600 mb-0'
                         />
                         <p className='text-gray-800'>

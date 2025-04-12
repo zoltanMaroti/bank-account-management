@@ -2,7 +2,7 @@ import { Steps } from "@/features/ui/types";
 
 export const steps: Steps = [
     {
-        name: "Details",
+        name: "details",
         fields: [
             "targetAmount",
             "sourceAccount",
@@ -10,5 +10,5 @@ export const steps: Steps = [
             "targetCurrency",
         ],
     },
-    { name: "Review" },
+    { name: "review" },
 ];

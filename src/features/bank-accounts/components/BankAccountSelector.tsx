@@ -7,6 +7,7 @@ import { formatCurrency } from "@/features/bank-accounts/utils";
 import { TransferFundsFormValues } from "@/features/transfer/types";
 import Label from "@/features/ui/components/Label";
 import ErrorMessage from "@/features/ui/components/ErrorMessage";
+import { useTranslations } from "next-intl";
 
 const BankAccountSelector = ({
     id,
@@ -29,6 +30,9 @@ const BankAccountSelector = ({
     defaultValue?: SingleValue<BankAccount>;
     value?: SingleValue<BankAccount>;
 }) => {
+    const tBankAccountSelect = useTranslations("SelectBankAccount");
+    const tSchema = useTranslations("Schema");
+
     const formatOptionLabel = ({
         currency,
         balance,
@@ -66,7 +70,7 @@ const BankAccountSelector = ({
             <Controller
                 name={name}
                 control={control}
-                rules={{ required: "This field is required" }}
+                rules={{ required: tSchema("required") }}
                 render={({ field }) => (
                     <Select
                         {...field}
@@ -86,7 +90,7 @@ const BankAccountSelector = ({
                         isSearchable={false}
                         formatOptionLabel={formatOptionLabel}
                         options={options}
-                        placeholder='Please choose an option'
+                        placeholder={tBankAccountSelect("placeholder")}
                         getOptionValue={(option) => option.id}
                         onChange={(
                             selectedOption: SingleValue<BankAccount>
@@ -102,7 +106,7 @@ const BankAccountSelector = ({
             <ErrorMessage
                 htmlFor={name}
                 hasError={hasError}
-                message='This field is required'
+                message={tSchema("required")}
             />
         </div>
     );

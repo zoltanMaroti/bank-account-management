@@ -2,6 +2,7 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import ArrowsIcon from "@/assets/icons/arrows.svg";
 import { Steps } from "@/features/ui/types";
+import { useTranslations } from "next-intl";
 
 const Stepper = ({
     steps,
@@ -10,6 +11,8 @@ const Stepper = ({
     steps: Steps;
     currentStep: number;
 }) => {
+    const t = useTranslations("Stepper");
+
     return (
         <ol className='flex items-center gap-4 justify-center w-full p-3 text-sm font-medium text-center cursor-default'>
             {steps.map((step, index) => {
@@ -35,7 +38,7 @@ const Stepper = ({
                             >
                                 {index + 1}
                             </span>
-                            {step.name}
+                            {t(step.name)}
                         </li>
 
                         {!isLastItem && (
