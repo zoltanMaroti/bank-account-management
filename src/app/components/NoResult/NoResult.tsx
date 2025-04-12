@@ -2,7 +2,11 @@ import React from "react";
 import FileIcon from "@/assets/icons/file.svg";
 import { useTranslations } from "next-intl";
 
-const NoResults = ({ searchTerm }: { searchTerm: string }) => {
+type Props = {
+    searchTerm: string;
+};
+
+const NoResults = ({ searchTerm }: Props) => {
     const t = useTranslations("SearchBankAccount");
 
     return (

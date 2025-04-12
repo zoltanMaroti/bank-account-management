@@ -1,15 +1,13 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-const Pagination = ({
-    pages,
-    scrollPosition,
-    onClick,
-}: {
+type Props = {
     pages: number;
     scrollPosition: number;
     onClick: (index: number) => void;
-}) => {
+};
+
+const Pagination = ({ pages, scrollPosition, onClick }: Props) => {
     return (
         <div className='flex justify-center'>
             {[...Array(pages)].map((_, index) => (

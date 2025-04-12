@@ -25,18 +25,16 @@ import { useTranslations } from "next-intl";
 import DeleteBankAccountButton from "@/app/components/DeleteBankAccountButton/DeleteBankAccountButton";
 import { hasBalance } from "@/app/components/DeleteBankAccountButton/utils";
 
-const BankAccountForm = ({
-    title,
-    bankAccount,
-    callback,
-}: {
+type Props = {
     title: string;
     bankAccount?: BankAccount;
     callback: (
         data: BankAccountFormValues,
         id?: string
     ) => Promise<BankAccount | never>;
-}) => {
+};
+
+const BankAccountForm = ({ title, bankAccount, callback }: Props) => {
     const [isPending, startTransition] = useTransition();
     const [description, setDescription] = useState(bankAccount?.description);
     const [currency, setCurrency] = useState<Currency>(

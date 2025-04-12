@@ -1,17 +1,14 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-const Label = ({
-    htmlFor,
-    label,
-    hasError,
-    className,
-}: {
+type Props = {
     htmlFor?: string;
     label: string;
     hasError?: boolean;
     className?: string;
-}) => {
+};
+
+const Label = ({ htmlFor, label, hasError, className }: Props) => {
     return (
         <label
             htmlFor={htmlFor}

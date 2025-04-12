@@ -8,13 +8,12 @@ import { BankAccount } from "@/app/components/BankAccountCard/types";
 import { Tooltip } from "react-tooltip";
 import { useTranslations } from "next-intl";
 
-const DeleteBankAccountButton = ({
-    bankAccount,
-    isDisabled,
-}: {
+type Props = {
     bankAccount: BankAccount;
     isDisabled: boolean;
-}) => {
+};
+
+const DeleteBankAccountButton = ({ bankAccount, isDisabled }: Props) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const t = useTranslations("DeleteBankAccount");
 

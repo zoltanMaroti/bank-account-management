@@ -11,17 +11,19 @@ import { AccountType } from "@/app/components/BankAccountCard/types";
 import { DEFAULT_BANK_ACCOUNT_TYPE } from "@/app/components/BankAccountForm/constants";
 import { useTranslations } from "next-intl";
 
-const BankAccountTypeSelector = ({
-    onChange,
-    hasError,
-    register,
-    defaultValue,
-}: {
+type Props = {
     onChange: (value: AccountType) => void;
     register: UseFormRegister<BankAccountFormValues>;
     hasError: boolean;
     defaultValue?: string;
-}) => {
+};
+
+const BankAccountTypeSelector = ({
+    onChange,
+    register,
+    hasError,
+    defaultValue,
+}: Props) => {
     const [accountType, setAccountType] = useState("");
     const tAccountType = useTranslations("BankAccountType");
     const tSchema = useTranslations("Schema");

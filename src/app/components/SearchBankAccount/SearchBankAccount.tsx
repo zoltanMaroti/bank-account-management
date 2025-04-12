@@ -3,13 +3,12 @@ import SearchIcon from "@/assets/icons/search.svg";
 import { twMerge } from "tailwind-merge";
 import { useTranslations } from "next-intl";
 
-const SearchBankAccount = ({
-    onChange,
-    searchTerm,
-}: {
+type Props = {
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     searchTerm: string;
-}) => {
+};
+
+const SearchBankAccount = ({ onChange, searchTerm }: Props) => {
     const t = useTranslations("SearchBankAccount");
 
     return (

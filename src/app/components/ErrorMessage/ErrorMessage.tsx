@@ -1,14 +1,12 @@
 import React from "react";
 
-const ErrorMessage = ({
-    htmlFor,
-    hasError,
-    message,
-}: {
+type Props = {
     htmlFor?: string;
     hasError: boolean;
     message?: string;
-}) => {
+};
+
+const ErrorMessage = ({ htmlFor, hasError, message }: Props) => {
     if (!hasError || !message) {
         return;
     }

@@ -9,17 +9,14 @@ import { CURRENCIES } from "@/app/components/BankAccountForm/constants";
 import { CurrencyOption } from "@/app/components/BankAccountForm/types";
 import { useTranslations } from "next-intl";
 
-const CurrencySelector = ({
-    control,
-    currency,
-    hasError,
-    onChange,
-}: {
+type Props = {
     control: Control<BankAccountFormValues, any>;
     currency?: Currency;
     hasError: boolean;
     onChange: (option: SingleValue<CurrencyOption>) => void;
-}) => {
+};
+
+const CurrencySelector = ({ control, currency, hasError, onChange }: Props) => {
     const tSchema = useTranslations("Schema");
     const tCurrencySelector = useTranslations("CurrencySelector");
 

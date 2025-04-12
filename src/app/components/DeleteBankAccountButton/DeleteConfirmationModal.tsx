@@ -5,15 +5,17 @@ import { BankAccount } from "@/app/components/BankAccountCard/types";
 import Button from "@/app/components/Button/Button";
 import { useTranslations } from "next-intl";
 
+type Props = {
+    bankAccount: BankAccount;
+    onCancel: VoidFunction;
+    onDelete: (account: BankAccount) => Promise<void>;
+};
+
 const DeleteConfirmationModal = ({
     bankAccount,
     onCancel,
     onDelete,
-}: {
-    bankAccount: BankAccount;
-    onCancel: () => void;
-    onDelete: (account: BankAccount) => Promise<void>;
-}) => {
+}: Props) => {
     const [isPending, startTransition] = useTransition();
 
     const t = useTranslations("DeleteBankAccount");
