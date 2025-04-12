@@ -63,6 +63,10 @@
         "title": "Bankszámláid"
     },
     "SearchBankAccount": {
-        "placeholder": "Keress bankszámlát vagy devizát"
+        "placeholder": "Keress bankszámlát vagy devizát",
+        "noResult": {
+            "title": "Nincs találat erre {searchTerm}",
+            "subtitle": "Kérlek próbáld újra"
+        }
     }
 }

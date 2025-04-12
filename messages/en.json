@@ -63,6 +63,10 @@
         "title": "Your accounts"
     },
     "SearchBankAccount": {
-        "placeholder": "Search for account, currency or balance"
+        "placeholder": "Search for account, currency or balance",
+        "noResult": {
+            "title": "No results found for {searchTerm}",
+            "subtitle": "Please try again with another keyword"
+        }
     }
 }
