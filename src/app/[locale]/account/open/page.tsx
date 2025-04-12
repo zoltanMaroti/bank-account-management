@@ -1,6 +1,6 @@
 import React from "react";
-import BankAccountForm from "@/app/components/BankAccountForm/BankAccountForm";
-import { createBankAccount } from "@/app/components/BankAccountForm/actions";
+import BankAccountForm from "@/features/bank-accounts/components/BankAccountForm";
+import { createBankAccount } from "@/features/bank-accounts/actions";
 import { use } from "react";
 import { Locale, useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";

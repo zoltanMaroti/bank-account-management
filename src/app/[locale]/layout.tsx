@@ -1,10 +1,10 @@
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import StoreProvider from "@/app/providers/StoreProvider";
+import StoreProvider from "@/features/bank-accounts/providers/StoreProvider";
 import { Metadata } from "next";
 import { Geist } from "next/font/google";
-import AppLayout from "@/app/components/Layout/AppLayout";
+import AppLayout from "@/features/ui/components/AppLayout";
 import "@/app/globals.css";
 
 const geist = Geist({

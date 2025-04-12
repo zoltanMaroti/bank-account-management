@@ -1,5 +1,5 @@
-import { fetchBankAccounts } from "@/app/components/BankAccounts/services";
-import BankAccounts from "@/app/components/BankAccounts/BankAccounts";
+import { fetchBankAccounts } from "@/features/bank-accounts/services";
+import BankAccounts from "@/features/bank-accounts/components/BankAccounts";
 
 export default async function HomePage() {
     const [bankAccounts] = await Promise.all([fetchBankAccounts()]);
