@@ -5,7 +5,7 @@ import { BankAccountFormValues } from "@/features/bank-accounts/types";
 import { Currency, CurrencyOption } from "@/features/currencies/types";
 import Label from "@/features/ui/components/Label";
 import ErrorMessage from "@/features/ui/components/ErrorMessage";
-import { CURRENCIES } from "@/features/bank-accounts/constants";
+import { CURRENCIES } from "@/features/currencies/constants";
 import { useTranslations } from "next-intl";
 
 type Props = {
