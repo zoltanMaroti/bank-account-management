@@ -61,5 +61,8 @@
     },
     "DashboardPage": {
         "title": "Bankszámláid"
+    },
+    "SearchBankAccount": {
+        "placeholder": "Keress bankszámlát vagy devizát"
     }
 }

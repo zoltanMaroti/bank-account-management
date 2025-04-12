@@ -61,5 +61,8 @@
     },
     "DashboardPage": {
         "title": "Your accounts"
+    },
+    "SearchBankAccount": {
+        "placeholder": "Search for account, currency or balance"
     }
 }

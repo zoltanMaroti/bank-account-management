@@ -1,6 +1,7 @@
 import React, { ChangeEvent } from "react";
 import SearchIcon from "@/assets/icons/search.svg";
 import { twMerge } from "tailwind-merge";
+import { useTranslations } from "next-intl";
 
 const SearchBankAccount = ({
     onChange,
@@ -9,6 +10,8 @@ const SearchBankAccount = ({
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     searchTerm: string;
 }) => {
+    const t = useTranslations("SearchBankAccount");
+
     return (
         <form
             className={twMerge(
@@ -19,7 +22,7 @@ const SearchBankAccount = ({
             <input
                 type='search'
                 data-testid='search'
-                placeholder='Search for account, currency or balance'
+                placeholder={t("placeholder")}
                 onChange={onChange}
                 className={twMerge(
                     "peer cursor-pointer relative w-full z-10 h-12 rounded-md bg-transparent pl-10 outline-none transition-all focus:cursor-text focus:pl-16 focus:pr-4 focus:bg-white focus:border focus:border-gray-400 md:w-12 md:focus:w-100",
