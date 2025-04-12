@@ -31,7 +31,8 @@
     "Menu": {
         "dashboard": "Kezdőlap",
         "transfer": "Átutalás",
-        "signOut": "Kijelentkezés"
+        "signOut": "Kijelentkezés",
+        "open": "Új bankszámla"
     },
     "DeleteBankAccount": {
         "confirmation": {

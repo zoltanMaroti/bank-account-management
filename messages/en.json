@@ -31,7 +31,8 @@
     "Menu": {
         "dashboard": "Dashboard",
         "transfer": "Transfer",
-        "signOut": "Sign out"
+        "signOut": "Sign out",
+        "open": "Add account"
     },
     "DeleteBankAccount": {
         "confirmation": {
