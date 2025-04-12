@@ -58,5 +58,8 @@
         "editButton": {
             "submit": "Edit"
         }
+    },
+    "DashboardPage": {
+        "title": "Your accounts"
     }
 }

@@ -58,5 +58,8 @@
         "editButton": {
             "submit": "Szerkesztés"
         }
+    },
+    "DashboardPage": {
+        "title": "Bankszámláid"
     }
 }
