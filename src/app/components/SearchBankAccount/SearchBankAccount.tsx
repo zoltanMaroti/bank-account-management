@@ -26,7 +26,8 @@ const SearchBankAccount = ({
                 onChange={onChange}
                 className={twMerge(
                     "peer cursor-pointer relative w-full z-10 h-12 rounded-md bg-transparent pl-10 outline-none transition-all focus:cursor-text focus:pl-16 focus:pr-4 focus:bg-white focus:border focus:border-gray-400 md:w-12 md:focus:w-100",
-                    searchTerm && "pl-16 pr-4 bg-white border border-gray-400"
+                    searchTerm &&
+                        "pl-16 pr-4 bg-white border border-gray-400 md:w-100"
                 )}
             />
             <SearchIcon
