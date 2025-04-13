@@ -1,11 +1,15 @@
-"use client";
-
 import React, { ReactNode } from "react";
 import Header from "@/features/ui/components/Header";
-import MobileMenu from "@/features/ui/components/MobileMenu";
 import DesktopMenu from "@/features/ui/components/DesktopMenu";
+import dynamic from "next/dynamic";
 
-const AppLayout = ({ children }: { children: ReactNode }) => {
+const MobileMenu = dynamic(() => import("@/features/ui/components/MobileMenu"));
+
+type Props = {
+    children: ReactNode;
+};
+
+const AppLayout = ({ children }: Props) => {
     return (
         <>
             <Header />
