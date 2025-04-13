@@ -6,17 +6,17 @@ import { fetchCreateTransaction } from "@/features/transfer/services";
 import { fetchUpdateBankAccount } from "@/features/bank-accounts/services";
 import { getCurrencyMultiplier } from "@/features/transfer/utils";
 import { revalidatePath } from "next/cache";
-import { CurrencyConversion } from "@/features/currencies/types";
+import { CurrencyRates } from "@/features/currencies/types";
 
 export const createTransaction = async (
     data: TransferFundsFormValues,
-    currencyConversion: CurrencyConversion
+    currencyRates: CurrencyRates
 ) => {
     const { sourceAccount, targetAccount, targetAmount, targetCurrency } = data;
 
     // Calculate target amount in source currency
     const sourceAccountMultiplier = getCurrencyMultiplier(
-        currencyConversion,
+        currencyRates,
         targetCurrency,
         sourceAccount.currency
     );
@@ -24,7 +24,7 @@ export const createTransaction = async (
 
     // Calculate target amount in target currency
     const targetAccountMultiplier = getCurrencyMultiplier(
-        currencyConversion,
+        currencyRates,
         targetCurrency,
         targetAccount.currency
     );

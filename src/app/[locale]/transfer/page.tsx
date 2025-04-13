@@ -1,13 +1,13 @@
 import React from "react";
 import TransferFundsForm from "@/features/transfer/components/TransferFundsForm";
 import { fetchBankAccounts } from "@/features/bank-accounts/services";
-import { fetchCurrencyConversion } from "@/features/transfer/services";
+import { fetchCurrencyRates } from "@/features/transfer/services";
 import NoBankAccountMessage from "@/features/bank-accounts/components/NoBankAccountMessage";
 
 export default async function TransferPage() {
-    const [accounts, currencyConversion] = await Promise.all([
+    const [accounts, currencyRates] = await Promise.all([
         fetchBankAccounts(),
-        fetchCurrencyConversion(),
+        fetchCurrencyRates(),
     ]);
 
     if (!accounts || !accounts.length) {
@@ -19,7 +19,7 @@ export default async function TransferPage() {
             <div className='w-96'>
                 <TransferFundsForm
                     accounts={accounts}
-                    currencyConversion={currencyConversion}
+                    currencyRates={currencyRates}
                 />
             </div>
         </section>

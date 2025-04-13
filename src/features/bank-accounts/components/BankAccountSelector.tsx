@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import Select, { SingleValue } from "react-select";
-import { Control, Controller } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
 import { BankAccount } from "@/features/bank-accounts/types";
 import { Currency } from "@/features/currencies/types";
 import { formatCurrency } from "@/features/bank-accounts/utils";
@@ -13,7 +13,6 @@ const BankAccountSelector = ({
     id,
     name,
     label,
-    control,
     accounts,
     hasError,
     onChange,
@@ -23,13 +22,13 @@ const BankAccountSelector = ({
     id?: string;
     name: keyof TransferFundsFormValues;
     label: string;
-    control: Control<TransferFundsFormValues, any>;
     accounts: BankAccount[];
     hasError: boolean;
     onChange: () => void;
     defaultValue?: SingleValue<BankAccount>;
     value?: SingleValue<BankAccount>;
 }) => {
+    const { control } = useFormContext();
     const tBankAccountSelect = useTranslations("SelectBankAccount");
     const tSchema = useTranslations("Schema");
 

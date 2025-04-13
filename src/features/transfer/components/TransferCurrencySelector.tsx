@@ -8,7 +8,7 @@ import GbpIcon from "@/assets/icons/gbp.svg";
 import { Currency } from "@/features/currencies/types";
 import { TransferFundsFormValues } from "@/features/transfer/types";
 import { DEFAULT_CURRENCY } from "@/features/currencies/constants";
-import { Control, Controller } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
 import { CURRENCIES } from "@/features/currencies/constants";
 
 const currencyIcons: { [key in Currency]: ReactNode } = {
@@ -17,22 +17,13 @@ const currencyIcons: { [key in Currency]: ReactNode } = {
     GBP: <GbpIcon className='h-4 w-4 me-2' />,
 };
 
-const CurrencySelector = ({
-    name,
-    control,
-}: {
+type Props = {
     name: keyof TransferFundsFormValues;
-    control: Control<TransferFundsFormValues, any>;
-}) => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+};
 
-    const onClickCurrency = (
-        currency: Currency,
-        fieldOnChange: (value: any) => void
-    ) => {
-        fieldOnChange(currency);
-        setIsDropdownOpen(false);
-    };
+const CurrencySelector = ({ name }: Props) => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const { control } = useFormContext();
 
     const toggleDropdown = () => setIsDropdownOpen((prevState) => !prevState);
 
@@ -74,12 +65,10 @@ const CurrencySelector = ({
                                         <li key={currency}>
                                             <button
                                                 type='button'
-                                                onClick={() =>
-                                                    onClickCurrency(
-                                                        currency,
-                                                        field.onChange
-                                                    )
-                                                }
+                                                onClick={() => {
+                                                    field.onChange(currency);
+                                                    setIsDropdownOpen(false);
+                                                }}
                                                 className='inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
                                             >
                                                 <div className='inline-flex items-center'>

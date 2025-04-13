@@ -1,9 +1,9 @@
-import { Currency, CurrencyConversion } from "@/features/currencies/types";
+import { Currency, CurrencyRates } from "@/features/currencies/types";
 import { MINIMUM_TRANSFER_AMOUNT } from "@/features/transfer/constants";
 import { formatCurrency } from "@/features/bank-accounts/utils";
 
 export const getCurrencyMultiplier = (
-    currencyConversion: CurrencyConversion,
+    currencyRates: CurrencyRates,
     sourceCurrency: Currency | undefined,
     selectedCurrency: Currency
 ) => {
@@ -11,7 +11,7 @@ export const getCurrencyMultiplier = (
         return 1;
     }
 
-    return currencyConversion[sourceCurrency][selectedCurrency];
+    return currencyRates[sourceCurrency][selectedCurrency];
 };
 
 export const convertBalanceToCurrency = (
