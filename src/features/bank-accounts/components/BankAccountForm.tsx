@@ -57,7 +57,7 @@ const BankAccountForm = ({ title, bankAccount, callback }: Props) => {
         formState: { errors },
     } = useForm<BankAccountFormValues>({
         defaultValues: {
-            accountType: bankAccount?.accountType,
+            accountType: bankAccount?.accountType || DEFAULT_BANK_ACCOUNT_TYPE,
             currency: bankAccount?.currency,
             description: bankAccount?.description,
         },
@@ -113,7 +113,6 @@ const BankAccountForm = ({ title, bankAccount, callback }: Props) => {
                 <BankAccountTypeSelector
                     onChange={onChangeAccountType}
                     hasError={!!errors?.accountType}
-                    register={register}
                     defaultValue={accountType}
                 />
                 <CurrencySelector

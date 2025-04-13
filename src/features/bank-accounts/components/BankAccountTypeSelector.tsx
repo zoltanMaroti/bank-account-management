@@ -1,48 +1,29 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SavingsIcon from "@/assets/icons/savings.svg";
 import CurrencyIcon from "@/assets/icons/currency.svg";
 import SalaryIcon from "@/assets/icons/salary.svg";
 import { twMerge } from "tailwind-merge";
-import { UseFormRegister } from "react-hook-form";
-import { BankAccountFormValues } from "@/features/bank-accounts/types";
 import { AccountType } from "@/features/bank-accounts/types";
-import { DEFAULT_BANK_ACCOUNT_TYPE } from "@/features/bank-accounts/constants";
 import { useTranslations } from "next-intl";
+import ErrorMessage from "@/features/ui/components/ErrorMessage";
 
 type Props = {
     onChange: (value: AccountType) => void;
-    register: UseFormRegister<BankAccountFormValues>;
     hasError: boolean;
     defaultValue?: string;
 };
 
 const BankAccountTypeSelector = ({
     onChange,
-    register,
     hasError,
     defaultValue,
 }: Props) => {
-    const [accountType, setAccountType] = useState("");
     const tAccountType = useTranslations("BankAccountType");
     const tSchema = useTranslations("Schema");
 
     const onSelectAccountType = (value: string) => {
-        setAccountType(value);
         onChange(value as AccountType);
     };
-
-    useEffect(() => {
-        // Register component ref in form
-        register("accountType", { required: true });
-
-        // Set local state default value
-        setAccountType(defaultValue || DEFAULT_BANK_ACCOUNT_TYPE);
-
-        // Callback
-        onChange((defaultValue as AccountType) || DEFAULT_BANK_ACCOUNT_TYPE);
-    }, [register, onChange, defaultValue]);
 
     return (
         <div>
@@ -60,7 +41,7 @@ const BankAccountTypeSelector = ({
                     className={twMerge(
                         "cursor-pointer w-full inline-flex items-center px-4 py-2 text-sm font-medium border border-gray-200 rounded-l-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700}",
                         hasError && "border-red-500",
-                        accountType === "savings"
+                        defaultValue === "savings"
                             ? "text-blue-700 bg-gray-100"
                             : "text-gray-900 bg-white"
                     )}
@@ -70,7 +51,7 @@ const BankAccountTypeSelector = ({
                         id='savings'
                         name='savings'
                         className='hidden'
-                        checked={accountType === "savings"}
+                        checked={defaultValue === "savings"}
                         onChange={() => onSelectAccountType("savings")}
                     />
                     <SavingsIcon className='w-4 h-4 me-2' />
@@ -81,7 +62,7 @@ const BankAccountTypeSelector = ({
                     className={twMerge(
                         "cursor-pointer w-full inline-flex items-center px-4 py-2 text-sm font-medium border-t border-b border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700",
                         hasError && "border-red-500",
-                        accountType === "currency"
+                        defaultValue === "currency"
                             ? "text-blue-700 bg-gray-100"
                             : "text-gray-900 bg-white"
                     )}
@@ -91,7 +72,7 @@ const BankAccountTypeSelector = ({
                         id='currency'
                         name='currency'
                         className='hidden'
-                        checked={accountType === "currency"}
+                        checked={defaultValue === "currency"}
                         onChange={() => onSelectAccountType("currency")}
                     />
                     <CurrencyIcon className='w-4 h-4 me-2' />
@@ -102,7 +83,7 @@ const BankAccountTypeSelector = ({
                     className={twMerge(
                         "cursor-pointer w-full inline-flex items-center px-4 py-2 text-sm font-medium border border-gray-200 rounded-r-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700",
                         hasError && "border-red-500",
-                        accountType === "salary"
+                        defaultValue === "salary"
                             ? "text-blue-700 bg-gray-100"
                             : "text-gray-900 bg-white"
                     )}
@@ -112,18 +93,18 @@ const BankAccountTypeSelector = ({
                         id='salary'
                         name='salary'
                         className='hidden'
-                        checked={accountType === "salary"}
+                        checked={defaultValue === "salary"}
                         onChange={() => onSelectAccountType("salary")}
                     />
                     <SalaryIcon className='w-4 h-4 me-2' />
                     {tAccountType("salary")}
                 </label>
             </div>
-            {hasError ? (
-                <label className='block mt-2 text-sm text-red-700'>
-                    {tSchema("required")}
-                </label>
-            ) : null}
+            <ErrorMessage
+                htmlFor='targetAmount'
+                hasError={hasError}
+                message={tSchema("required")}
+            />
         </div>
     );
 };
