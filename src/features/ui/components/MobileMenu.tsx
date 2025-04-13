@@ -1,3 +1,5 @@
+"use client";
+
 import { twMerge } from "tailwind-merge";
 import NavLink from "@/features/ui/components/NavLink";
 import DashboardIcon from "@/assets/icons/dashboard.svg";

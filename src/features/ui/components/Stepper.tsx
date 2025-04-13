@@ -4,13 +4,12 @@ import ArrowsIcon from "@/assets/icons/arrows.svg";
 import { Steps } from "@/features/ui/types";
 import { useTranslations } from "next-intl";
 
-const Stepper = ({
-    steps,
-    currentStep,
-}: {
+type Props = {
     steps: Steps;
     currentStep: number;
-}) => {
+};
+
+const Stepper = ({ steps, currentStep }: Props) => {
     const t = useTranslations("Stepper");
 
     return (
@@ -41,7 +40,7 @@ const Stepper = ({
                             {t(step.name)}
                         </li>
 
-                        {!isLastItem && (
+                        {isLastItem ? null : (
                             <li>
                                 <ArrowsIcon
                                     className={twMerge(

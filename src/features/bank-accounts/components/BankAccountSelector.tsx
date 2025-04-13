@@ -9,6 +9,17 @@ import Label from "@/features/ui/components/Label";
 import ErrorMessage from "@/features/ui/components/ErrorMessage";
 import { useTranslations } from "next-intl";
 
+type Props = {
+    id?: string;
+    name: keyof TransferFundsFormValues;
+    label: string;
+    accounts: BankAccount[];
+    hasError: boolean;
+    onChange: () => void;
+    defaultValue?: SingleValue<BankAccount>;
+    value?: SingleValue<BankAccount>;
+};
+
 const BankAccountSelector = ({
     id,
     name,
@@ -18,16 +29,7 @@ const BankAccountSelector = ({
     onChange,
     defaultValue,
     value,
-}: {
-    id?: string;
-    name: keyof TransferFundsFormValues;
-    label: string;
-    accounts: BankAccount[];
-    hasError: boolean;
-    onChange: () => void;
-    defaultValue?: SingleValue<BankAccount>;
-    value?: SingleValue<BankAccount>;
-}) => {
+}: Props) => {
     const { control } = useFormContext();
     const tBankAccountSelect = useTranslations("SelectBankAccount");
     const tSchema = useTranslations("Schema");

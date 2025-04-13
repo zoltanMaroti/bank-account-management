@@ -1,5 +1,5 @@
-import BankAccountCard from "@/features/bank-accounts/components/BankAccountCard";
 import React from "react";
+import BankAccountCard from "@/features/bank-accounts/components/BankAccountCard";
 import TransferIcon from "@/assets/icons/transfer.svg";
 import { BankAccount } from "@/features/bank-accounts/types";
 import { Currency } from "@/features/currencies/types";
@@ -7,17 +7,19 @@ import { formatCurrency } from "@/features/bank-accounts/utils";
 import Label from "@/features/ui/components/Label";
 import { useTranslations } from "next-intl";
 
+type Props = {
+    sourceAccount: BankAccount;
+    targetAccount: BankAccount;
+    targetAmount: number;
+    targetCurrency: Currency;
+};
+
 const ReviewTransfer = ({
     sourceAccount,
     targetAccount,
     targetAmount,
     targetCurrency,
-}: {
-    sourceAccount: BankAccount;
-    targetAccount: BankAccount;
-    targetAmount: number;
-    targetCurrency: Currency;
-}) => {
+}: Props) => {
     const t = useTranslations("TransferFundsPage");
 
     return (

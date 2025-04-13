@@ -1,7 +1,11 @@
 import React, { ReactNode, useRef, useState, useEffect, Children } from "react";
 import Pagination from "@/features/ui/components/Pagination";
 
-const HorizontalScroll = ({ children }: { children: ReactNode }) => {
+type Props = {
+    children: ReactNode;
+};
+
+const HorizontalScroll = ({ children }: Props) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [pages, setPages] = useState(1);
