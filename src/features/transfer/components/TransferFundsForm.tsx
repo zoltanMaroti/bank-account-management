@@ -102,7 +102,7 @@ const TransferFundsForm = ({ accounts, currencyRates }: Props) => {
                         onClick={nextStep}
                         disabled={isPending}
                     >
-                        {isLastStep ? t("continue") : buttonText}
+                        {isLastStep ? buttonText : t("continue")}
                     </Button>
 
                     {isLastStep ? (
