@@ -7,7 +7,10 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "test:unit": "jest"
+        "test:unit": "jest",
+        "test:e2e": "npx playwright test",
+        "e2e": "API_URL=http://localhost:1112 APP_ENV=e2e concurrently \"json-server -p 1112 db-e2e.json\" \"next dev -p 3001\"",
+        "update-snapshots": "npx playwright test --update-snapshots"
     },
     "dependencies": {
         "@reduxjs/toolkit": "^2.6.1",
@@ -24,6 +27,7 @@
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",
+        "@playwright/test": "^1.51.1",
         "@svgr/webpack": "^8.1.0",
         "@tailwindcss/postcss": "^4",
         "@types/node": "^20",
