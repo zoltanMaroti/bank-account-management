@@ -1,6 +1,5 @@
 import NavLink from "@/features/ui/components/NavLink";
 import DashboardIcon from "@/assets/icons/dashboard.svg";
-import SignOutIcon from "@/assets/icons/signOut.svg";
 import TransferIcon from "@/assets/icons/transfer.svg";
 import PlusIcon from "@/assets/icons/plus.svg";
 import { useTranslations } from "next-intl";
@@ -26,10 +25,6 @@ const DesktopMenu = () => {
                 <NavLink href='/transfer'>
                     <TransferIcon className='w-5 h-5 text-gray-50' />
                     <span className='ms-3'>{t("transfer")}</span>
-                </NavLink>
-                <NavLink href='#'>
-                    <SignOutIcon className='w-5 h-5 text-gray-50' />
-                    <span className='ms-3'>{t("signOut")}</span>
                 </NavLink>
             </nav>
         </aside>
