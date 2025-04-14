@@ -2,8 +2,8 @@
 
 import React, { ReactNode } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { twJoin } from "tailwind-merge";
+import { usePathname } from "@/i18n/navigation";
 
 const NavLink = ({ href, children }: { href: string; children: ReactNode }) => {
     const pathName = usePathname();

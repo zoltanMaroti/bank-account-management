@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
@@ -15,10 +16,12 @@ const geist = Geist({
 export async function generateMetadata({
     params,
 }: {
-    params: { locale: string };
+    params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
+    const { locale } = await params;
+
     const t = await getTranslations({
-        locale: params.locale,
+        locale: locale,
         namespace: "Metadata",
     });
 
@@ -32,10 +35,11 @@ export default async function LocaleLayout({
     children,
     params,
 }: {
-    children: React.ReactNode;
+    children: ReactNode;
     params: Promise<{ locale: string }>;
 }) {
     const { locale } = await params;
+
     if (!hasLocale(routing.locales, locale)) {
         notFound();
     }
