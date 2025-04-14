@@ -6,6 +6,7 @@ import { useSearch } from "@/features/bank-accounts/hooks";
 import NoResults from "@/features/bank-accounts/components/NoResult";
 import BankAccountsLayout from "@/features/bank-accounts/components/BankAccountsLayout";
 import BankAccountsCarousel from "@/features/bank-accounts/components/BankAccountsCarousel";
+import { useTranslations } from "next-intl";
 
 type Props = {
     bankAccounts: BankAccount[];
@@ -15,13 +16,17 @@ const BankAccounts = ({ bankAccounts }: Props) => {
     const { searchResult, debouncedSearchTerm, onChangeSearchTerm, isPending } =
         useSearch();
 
+    const t = useTranslations("SearchBankAccount");
+
     if (isPending) {
         return (
             <BankAccountsLayout
                 onChange={onChangeSearchTerm}
                 searchTerm={debouncedSearchTerm}
             >
-                <div className='flex gap-2 w-full'>Loading...</div>
+                <div className='flex gap-2 w-full h-100 max-h-32 items-center justify-center'>
+                    {t("pending")}
+                </div>
             </BankAccountsLayout>
         );
     }

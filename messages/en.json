@@ -68,7 +68,8 @@
         "noResult": {
             "title": "No results found for {searchTerm}",
             "subtitle": "Please try again with another keyword"
-        }
+        },
+        "pending": "Searching..."
     },
     "TransferFundsPage": {
         "title": "Transfer funds",

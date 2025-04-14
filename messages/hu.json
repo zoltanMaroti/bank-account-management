@@ -68,7 +68,8 @@
         "noResult": {
             "title": "Nincs találat erre {searchTerm}",
             "subtitle": "Kérlek próbáld újra"
-        }
+        },
+        "pending": "Keresés..."
     },
     "TransferFundsPage": {
         "title": "Átutalás",
