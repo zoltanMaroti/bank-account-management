@@ -99,5 +99,9 @@
         "from": "Forrás számla",
         "to": "Célszámla",
         "amount": "Összeg"
+    },
+    "Metadata": {
+        "title": "Bankszámla menedzsment",
+        "description": "Pénzügyek és átutalások kezelése"
     }
 }

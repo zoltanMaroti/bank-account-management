@@ -6,15 +6,27 @@ import { Metadata } from "next";
 import { Geist } from "next/font/google";
 import AppLayout from "@/features/ui/components/AppLayout";
 import "@/app/globals.css";
+import { getTranslations } from "next-intl/server";
 
 const geist = Geist({
     subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-    title: "Bank Accounts Management",
-    description: "Overseeing financial accounts and transactions.",
-};
+export async function generateMetadata({
+    params,
+}: {
+    params: { locale: string };
+}): Promise<Metadata> {
+    const t = await getTranslations({
+        locale: params.locale,
+        namespace: "Metadata",
+    });
+
+    return {
+        title: t("title"),
+        description: t("description"),
+    };
+}
 
 export default async function LocaleLayout({
     children,

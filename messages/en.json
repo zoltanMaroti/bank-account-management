@@ -99,5 +99,9 @@
         "from": "Source account",
         "to": "Target account",
         "amount": "Amount"
+    },
+    "Metadata": {
+        "title": "Bank Accounts Management",
+        "description": "Overseeing financial accounts and transactions"
     }
 }
