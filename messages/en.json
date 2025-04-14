@@ -92,5 +92,12 @@
     },
     "SelectBankAccount": {
         "placeholder": "Please choose an account"
+    },
+    "Transactions": {
+        "title": "Recent transfers",
+        "date": "Date",
+        "from": "Source account",
+        "to": "Target account",
+        "amount": "Amount"
     }
 }

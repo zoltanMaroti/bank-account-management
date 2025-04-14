@@ -92,5 +92,12 @@
     },
     "SelectBankAccount": {
         "placeholder": "Kérlek válassz bankszámlát"
+    },
+    "Transactions": {
+        "title": "Legutóbbi átutalások",
+        "date": "Dátum",
+        "from": "Forrás számla",
+        "to": "Célszámla",
+        "amount": "Összeg"
     }
 }
