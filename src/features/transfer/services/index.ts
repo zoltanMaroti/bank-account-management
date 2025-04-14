@@ -21,7 +21,7 @@ export const fetchCreateTransaction = (data: Transaction) => {
         body: JSON.stringify(data),
     })
         .then((response) => response.json())
-        .catch((error) => {
+        .catch(() => {
             // Handle error, log to Sentry etc.
             console.error("Failed to create transaction");
         });
