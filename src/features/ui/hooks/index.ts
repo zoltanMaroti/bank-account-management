@@ -7,6 +7,7 @@ export const useStepper = ({
     callback,
 }: {
     steps: Steps;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     trigger: any;
     callback: () => void;
 }) => {

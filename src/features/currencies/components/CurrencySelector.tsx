@@ -9,7 +9,7 @@ import { CURRENCIES } from "@/features/currencies/constants";
 import { useTranslations } from "next-intl";
 
 type Props = {
-    control: Control<BankAccountFormValues, any>;
+    control: Control<BankAccountFormValues, unknown>;
     currency?: Currency;
     hasError: boolean;
     onChange: (option: SingleValue<CurrencyOption>) => void;

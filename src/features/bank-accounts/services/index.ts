@@ -10,7 +10,7 @@ export const fetchCreateBankAccount = (data: BankAccount) => {
         body: JSON.stringify(data),
     })
         .then((response) => response.json())
-        .catch((error) => {
+        .catch(() => {
             // Handle error, log to Sentry etc.
             console.error("Failed to create bank account");
         });
@@ -30,7 +30,7 @@ export const fetchUpdateBankAccount = async (
         body: JSON.stringify(data),
     })
         .then((response) => response.json())
-        .catch((error) => {
+        .catch(() => {
             // Handle error, log to Sentry etc.
             console.error("Failed to update bank account");
         });
@@ -82,7 +82,7 @@ export const fetchDeleteBankAccount = async (
         },
     })
         .then((response) => response.json())
-        .catch((error) => {
+        .catch(() => {
             // Handle error, log to Sentry etc.
             console.error("Failed to delete bank account");
         });

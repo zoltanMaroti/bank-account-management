@@ -3,15 +3,17 @@ import BankAccountForm from "@/features/bank-accounts/components/BankAccountForm
 import { fetchBankAccount } from "@/features/bank-accounts/services";
 import { notFound } from "next/navigation";
 import { updateBankAccount } from "@/features/bank-accounts/actions";
-import { Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 type Props = {
-    params: { id: string; locale: Locale };
+    params: Promise<{
+        id: string;
+        locale: string;
+    }>;
 };
 
 export default async function EditBankAccountPage({ params }: Props) {
-    const { id, locale } = params;
+    const { id, locale } = await params;
     const bankAccount = await fetchBankAccount(id);
 
     // Enable static rendering
