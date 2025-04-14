@@ -2,7 +2,7 @@ import { PageScreenshotOptions } from "@playwright/test";
 
 export const screenshotConfig: PageScreenshotOptions = {
     fullPage: true,
-    quality: 90,
+    quality: 70,
     type: "jpeg",
     animations: "disabled",
 };

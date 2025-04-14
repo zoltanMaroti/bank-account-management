@@ -9,7 +9,7 @@
         "lint": "next lint",
         "test:unit": "jest",
         "test:e2e": "npx playwright test",
-        "e2e": "API_URL=http://localhost:1112 APP_ENV=e2e concurrently \"json-server -p 1112 db-e2e.json\" \"next dev -p 3001\"",
+        "e2e": "API_URL=http://localhost:1112 APP_ENV=e2e concurrently \"json-server -p 1112 db-e2e.json\" \"npm run build && next start -p 3001\"",
         "update-snapshots": "npx playwright test --update-snapshots"
     },
     "dependencies": {

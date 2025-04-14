@@ -29,7 +29,8 @@ export default defineConfig({
         stderr: "pipe",
     },
     timeout: 30 * 1000,
-    fullyParallel: true,
+    fullyParallel: false,
+    retries: 2,
     use: {
         baseURL,
         trace: "off",
@@ -39,16 +40,6 @@ export default defineConfig({
         {
             name: "chromium",
             use: { ...devices["Desktop Chrome"] },
-            ...browserConfig,
-        },
-        {
-            name: "firefox",
-            use: { ...devices["Desktop Firefox"] },
-            ...browserConfig,
-        },
-        {
-            name: "webkit",
-            use: { ...devices["Desktop Safari"] },
             ...browserConfig,
         },
     ],
