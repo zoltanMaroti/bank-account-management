@@ -1,6 +1,6 @@
 import { Currency, CurrencyRates } from "@/features/currencies/types";
-import { MINIMUM_TRANSFER_AMOUNT } from "@/features/transfer/constants";
-import { formatCurrency } from "@/features/bank-accounts/utils";
+import { MINIMUM_TRANSFER_AMOUNT } from "../constants";
+import { formatCurrency } from "../../bank-accounts/utils";
 
 export const getCurrencyMultiplier = (
     currencyRates: CurrencyRates,
