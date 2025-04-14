@@ -24,7 +24,7 @@ test.describe("Edit account page visual regression tests", () => {
 
     test("Delete modal is rendered", async ({ page }) => {
         await page.goto("/account/8e8dfd38-a5f4-4020-8c41-18b3e46e9502");
-        const button = await page.getByTestId("delete-account-button");
+        const button = page.getByTestId("delete-account-button");
         await button.click();
         const screenshot = await page.screenshot(screenshotConfig);
         expect(screenshot).toMatchSnapshot("delete-modal.jpeg");

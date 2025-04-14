@@ -17,7 +17,7 @@ test.describe("Dashboard page visual regression tests", () => {
         const search = page.getByTestId("search");
         await search.click();
         await search.fill("My savings");
-        await page.waitForLoadState("networkidle");
+        await page.waitForTimeout(1000); // TODO: fix flaky test by waiting for server-action to be completed
         const screenshot = await page.screenshot(screenshotConfig);
         expect(screenshot).toMatchSnapshot("search-result.jpeg");
     });
