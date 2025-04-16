@@ -4,6 +4,8 @@
 
 [https://bank-account-management.vercel.app/](https://bank-account-management.vercel.app/)
 
+Note: The application is deployed to a free hosting service, which means it may spin down after a period of inactivity. As a result, the initial load might take some time. If the page appears unresponsive, please try refreshing the page.
+
 Features:
 
 -   Create, list, update, delete and search accounts with different account types and currencies
